@@ -9,9 +9,6 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <Link to="/" className="logo">🌱 AgriMarket</Link>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/products">Products</Link>
       </div>
       <div className="navbar-right">
         {user ? (
@@ -21,8 +18,8 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/signin" className="btn btn-primary" style={{textDecoration:"none",padding:"10px 30px",marginBottom:"16px"}}>Sign In</Link>
-            <Link to="/register" className="btn btn-outline" style={{textDecoration:"none"}}>Register</Link>
+            <Link to="/" className="btn btn-primary" style={{textDecoration:"none",padding:"10px 30px",marginBottom:"16px"}}>Home</Link>
+            <Link to="/about" className="btn btn-outline" style={{textDecoration:"none"}}>About</Link>
           </>
         )}
       </div>

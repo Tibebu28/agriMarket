@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css"
 const Home = () => {
   const navigate = useNavigate();
@@ -25,12 +25,9 @@ const Home = () => {
             AgriMarket eliminates middlemen, ensuring farmers get fair prices and buyers get fresh, quality produce.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={handleGetStarted}>
-              Get Started →
-            </button>
-            <button className="btn btn-outline" onClick={handleExploreProducts}>
-              Explore Products
-            </button>
+            <Link to="./About" className="btn btn-primary" style={{textAlign:"center",textDecoration:"none"}}>
+              About
+            </Link>
           </div>
           <div className="stats-container">
             <div className="stat">
@@ -57,7 +54,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="features">
+      <section className="features" id="why">
         <h2 className="section-title">Why Choose AgriMarket?</h2>
         <p className="section-subtitle">
           We connect farmers directly to buyers, revolutionizing the agricultural market.
@@ -82,8 +79,8 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="how-it-works">
-        <h2 className="section-title">How AgriMarket Works</h2>
+      <section className="how-it-works" id="how">
+        <h2 className="section-title" >How AgriMarket Works</h2>
         <p className="section-subtitle">Simple steps to connect farmers and buyers</p>
         <div className="steps">
           <div className="step">
@@ -102,9 +99,6 @@ const Home = () => {
             <p className="step-desc">Receive produce delivered directly to your doorstep.</p>
           </div>
         </div>
-        <button className="btn btn-primary" onClick={handleExploreProducts}>
-          View All Products →
-        </button>
       </section>
     </div>
   );
