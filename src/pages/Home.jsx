@@ -38,11 +38,11 @@ const Home = () => {
               <p className="stat-label">Active Farmers</p>
             </div>
             <div className="stat">
-              <p className="stat-number">10k</p>
+              <p className="stat-number">7k</p>
               <p className="stat-label">Happy Buyers</p>
             </div>
             <div className="stat">
-              <p className="stat-number">7k</p>
+              <p className="stat-number">10k</p>
               <p className="stat-label">Orders Delivered</p>
             </div>
           </div>

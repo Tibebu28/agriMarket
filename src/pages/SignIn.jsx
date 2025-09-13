@@ -7,17 +7,17 @@ import "../App.css";
 export default function SignIn() {
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
     setError("");
-    if (!email || !password) {
+    if (!phone || !password) {
       setError("Please fill in all fields");
       return;
     }
-    const user = { id: "1", name: email.split("@")[0], email, userType: "buyer" };
+    const user = { id: "1", name: phone.split("@")[0], phone, userType: "buyer" };
     await login(user);
     navigate("/dashboard");
   };
@@ -83,10 +83,10 @@ export default function SignIn() {
           <h2>Sign In</h2>
           {error && <p className="error">{error}</p>}
           <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="number"
+            placeholder="Phone number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
           />
           <input
             type="password"

@@ -9,7 +9,7 @@ const mockProducts = [
   { id: '4', name: 'Onion', price: 1.8, unit: 'kg', farmer: 'Mesfin Fekadu', location: 'Mekelle', rating: 4.6, image: 'https://img.freepik.com/premium-photo/fresh-onion-wallpaper-photo_234209-1958.jpg', category: 'Vegetables', description: 'Locally grown onions', inStock: true, organic: true },
 
   // Fruits
-  { id: '5', name: 'Apple', price: 3.0, unit: 'kg', farmer: 'Jane Smith', location: 'Bahir Dar', rating: 4.8, image: 'https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg', category: 'Fruits', description: 'Juicy red apples', inStock: false, organic: true },
+  { id: '5', name: 'Apple', price: 3.0, unit: 'kg', farmer: 'Jane Smith', location: 'Bahir Dar', rating: 4.8, image: 'https://cdn.stocksnap.io/img-thumbs/960w/fresh-apple_KNCHMWUOR0.jpg', category: 'Fruits', description: 'Juicy red apples', inStock: true, organic: true },
   { id: '6', name: 'Banana', price: 2.0, unit: 'kg', farmer: 'Kebede Tadesse', location: 'Jimma', rating: 4.6, image: 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1FZ3wT.img?w=768&h=502&m=6', category: 'Fruits', description: 'Sweet ripe bananas', inStock: true, organic: true },
   { id: '7', name: 'Mango', price: 3.5, unit: 'kg', farmer: 'Lidya Alemayehu', location: 'Arba Minch', rating: 4.9, image: 'https://ichef.bbci.co.uk/images/ic/1920x1080/p06hk0h6.jpg', category: 'Fruits', description: 'Sweet tropical mangoes', inStock: true, organic: true },
   { id: '8', name: 'Orange', price: 2.8, unit: 'kg', farmer: 'Hana Worku', location: 'Dire Dawa', rating: 4.7, image: 'https://img.freepik.com/premium-photo/orange-fruit-market-stall_687801-3014.jpg', category: 'Fruits', description: 'Fresh juicy oranges', inStock: true, organic: true },
@@ -74,7 +74,7 @@ const Products = () => {
               <h3>{product.name}</h3>
               <p className="description">{product.description}</p>
               <p className="price">${product.price.toFixed(2)}/{product.unit}</p>
-              <p className="farmer">{product.farmer} 📍 {product.location}</p>
+              <p className="farmer">{product.farmer}  {product.location}</p>
             </div>
           </div>
         ))}
@@ -87,7 +87,6 @@ const Products = () => {
             <img src={selectedProduct.image} alt={selectedProduct.name} className="modal-image" />
             <h3>{selectedProduct.name}</h3>
             <p className="modal-price">${selectedProduct.price.toFixed(2)}/{selectedProduct.unit}</p>
-            <p className="modal-rating">⭐ {selectedProduct.rating}</p>
             <p className="modal-description">{selectedProduct.description}</p>
             <p className="modal-farmer">{selectedProduct.farmer} 📍 {selectedProduct.location}</p>
             <button className={`add-button ${!selectedProduct.inStock ? 'disabled' : ''}`} disabled={!selectedProduct.inStock}>

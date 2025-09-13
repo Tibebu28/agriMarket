@@ -25,6 +25,7 @@ export default function Register() {
     if (formData.password !== formData.confirmPassword)
       tempErrors.confirmPassword = "Passwords do not match";
     if (formData.userType === "farmer") {
+      if (!formData.farmName) tempErrors.farmName = "farmer name is required"
       if (!formData.location) tempErrors.location = "Location is required";
     }
     setErrors(tempErrors);
@@ -58,7 +59,7 @@ export default function Register() {
   </div>
 </div>
 
-
+    
       <div className="register-right">
         <div className="register-container">
           <h2>Create Your Account</h2>
@@ -88,10 +89,18 @@ export default function Register() {
             />
             {errors.name && <span className="error">{errors.name}</span>}
           </div>
-
-
+          
           {formData.userType === "farmer" && (
             <>
+              <div className="form-group">
+                <input
+                  type="text"
+                  placeholder="Farmer Name"
+                  value={formData.farmName}
+                  onChange={(e) => setFormData({ ...formData, farmName: e.target.value })}
+                />
+                {errors.farmName && <span className="error">{errors.farmName}</span>}
+               </div>
               <div className="form-group">
                 <input
                   type="text"
@@ -140,7 +149,9 @@ export default function Register() {
             Create Account
           </button>
         </div>
+        
       </div>
+      
     </div>
   );
 }

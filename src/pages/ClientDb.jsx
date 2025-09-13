@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export default function ClientDb({ user, products }) {
   const [cart, setCart] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [market, setMarket] = useState(products)
 
   const addToCart = (product) => setCart([...cart, product]);
   const buyProducts = () => {

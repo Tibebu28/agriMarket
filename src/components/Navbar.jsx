@@ -21,8 +21,8 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <Link to="/signin" className="btn btn-primary">Sign In</Link>
-            <Link to="/register" className="btn btn-outline">Register</Link>
+            <Link to="/signin" className="btn btn-primary" style={{textDecoration:"none",padding:"10px 30px",marginBottom:"16px"}}>Sign In</Link>
+            <Link to="/register" className="btn btn-outline" style={{textDecoration:"none"}}>Register</Link>
           </>
         )}
       </div>
